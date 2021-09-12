@@ -29,15 +29,17 @@
 	</head>
     <body>
 		<div class="container">
-			<div class="row">
+			<div class="row header">
                 <div class="col-12">
                     <h4 class="text-center">Nhập liệu người ra thành phố</h4>
                 </div>
 			</div>
-            <div class="row">
+            <div class="row input-header">
                 <div class="col-12">
                     <h5>Phương tiện, biển kiểm soát:</h5>
                 </div>
+            </div>
+            <div class="row input-content">
                 <div class="col-6">
                     <div class="form-group">
                         <label>Loại phương tiện:</label>
@@ -57,10 +59,12 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row input-header">
                 <div class="col-12">
                     <h5>Thông tin vào thành phố:</h5>
                 </div>
+            </div>
+            <div class="row input-content">
                 <div class="col-12">
                     <p>Số lượng người: 5</p>
                     <p>Họ tên lái xe: Nguyễn Văn Vinh</p>
@@ -68,7 +72,7 @@
                     <p>Thông tin nơi đi: Bà Rịa - Vũng Tàu - Huyện Côn Đảo</p>
                 </div>
             </div>
-            <div class="row" style="display: none;">
+            <div class="row input-content">
                 <div class="col-12">
                     <div class="form-group">
                         <label>Số lượng người:</label>
@@ -76,12 +80,14 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row input-header">
                 <div class="col-12">
                     <h5>Lý do khác:</h5>
                 </div>
+            </div>
+            <div class="row input-content">
                 <div class="col-12">
-                    <div class="form-check">
+                    <div class="form-check mb-2">
                         <input class="form-check-input" type="checkbox" value="" id="enter-manually">
                         <label class="form-check-label" for="enter-manually">
                           Nhập bằng tay
@@ -96,10 +102,10 @@
             </div>
             <div class="row mt-3">
                 <div class="col-6">
-                    <button type="submit" class="btn btn-success">Cho phép đi qua</button>
+                    <button type="submit" class="btn btn-success btn-block">Cho phép đi qua</button>
                 </div>
                 <div class="col-6">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModal">
                         Lý do khác
                     </button>                
                 </div>
