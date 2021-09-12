@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+		<!-- Page Title -->
+		<title>Kiểm soát ra vào Gia Nghĩa</title>
+		
+		<!-- Page header -->
+		<meta charset="utf-8"/>	
+		<meta name="description" content=""/>
+		<meta name="keywords" content=""/>
+		<meta name="author" content=""/>
+		<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+		<meta name="viewport" content="width=device-width"/>
+		<!-- CSS -->
+		<link rel="stylesheet" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="css/style.css"/>
+		<link rel="stylesheet" href="css/font-awesome.min.css"/>
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"/>
+		<!-- Favicons -->
+		<link rel="shortcut icon" href="images/favicon.png">
+		<link rel="apple-touch-icon" href="images/favicon.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="images/favicon.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="images/favicon.png">
+		<!-- Script -->
+		<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+	</head>
+    <body>
+		<div class="container">
+			<div class="row">
+                <div class="col-12">
+                    <h4 class="text-center">Nhập liệu người ra thành phố</h4>
+                </div>
+			</div>
+            <div class="row">
+                <div class="col-12">
+                    <h5>Phương tiện, biển kiểm soát:</h5>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label>Loại phương tiện:</label>
+                        <select class="form-control">
+                          <option>Chọn loại phương tiện</option>
+                          <option>Ô tô tải</option>
+                          <option>Ô tô đầu kéo kéo sơ mi rơ moóc</option>
+                          <option>Ô tô kéo</option>
+                          <option>Phương tiện khác</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label>Biển kiểm soát:</label>
+                        <input type="text" class="form-control" placeholder="Biển kiểm soát">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h5>Thông tin vào thành phố:</h5>
+                </div>
+                <div class="col-12">
+                    <p>Số lượng người: 5</p>
+                    <p>Họ tên lái xe: Nguyễn Văn Vinh</p>
+                    <p>SĐT lái xe:: 09876543210</p>
+                    <p>Thông tin nơi đi: Bà Rịa - Vũng Tàu - Huyện Côn Đảo</p>
+                </div>
+            </div>
+            <div class="row" style="display: none;">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label>Số lượng người:</label>
+                        <input type="number" class="form-control" placeholder="Số lượng người" min="1" max="50" id="number-people">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h5>Lý do khác:</h5>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="enter-manually">
+                        <label class="form-check-label" for="enter-manually">
+                          Nhập bằng tay
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-group">
+                        <input type="datetime-local" class="form-control" disabled id="enter-datetime" placeholder="dd/mm/yyy --:-- --">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <button type="submit" class="btn btn-success">Cho phép đi qua</button>
+                </div>
+                <div class="col-6">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        Lý do khác
+                    </button>                
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Lý do không cho phép đi qua</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <select class="form-control" id="reason-reject">
+                                              <option>Chọn lý do</option>
+                                              <option>Thiếu giấy tờ cần thiết</option>
+                                              <option>Thông tin khai báo sai</option>
+                                              <option>Giấy tờ hết hiệu lực</option>
+                                              <option value="4">Lý do khác</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-12" id="input-other-reason" style="display: none;">
+                                        <div class="form-group">
+                                            <label for="exampleFormControlTextarea1">Nhập lý do khác</label>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                            <button type="button" class="btn btn-primary">Gửi</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+    </body>
+</html>
+<script src="js/districts.min.js"></script>
+<script>
+    $('#reason-reject').on('change', function(){
+        if($(this).val() == 4) {
+            $('#input-other-reason').show()
+        } else {
+            $('#input-other-reason').hide()
+        }
+    }) 
+    $('#enter-manually').on('change', function(){
+        if($(this).is(":checked")) {
+            $('#enter-datetime').prop('disabled', false)
+        } else {
+            $('#enter-datetime').prop('disabled', true)
+        }
+    })
+</script>
