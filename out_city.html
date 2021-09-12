@@ -88,11 +88,13 @@
                         </label>
                     </div>
                 </div>
-                <div class="col-12">
+                <div class="col-12" id="enter-datetime" style="display: none;">
                     <div class="form-group">
-                        <input type="datetime-local" class="form-control" disabled id="enter-datetime" placeholder="dd/mm/yyy --:-- --">
+                        <input type="datetime-local" class="form-control" placeholder="dd/mm/yyy --:-- --">
                     </div>
                 </div>
+            </div>
+            <div class="row mt-3">
                 <div class="col-6">
                     <button type="submit" class="btn btn-success">Cho phép đi qua</button>
                 </div>
@@ -116,11 +118,11 @@
                                     <div class="col-12">
                                         <div class="form-group">
                                             <select class="form-control" id="reason-reject">
-                                              <option>Chọn lý do</option>
-                                              <option>Thiếu giấy tờ cần thiết</option>
-                                              <option>Thông tin khai báo sai</option>
-                                              <option>Giấy tờ hết hiệu lực</option>
-                                              <option value="4">Lý do khác</option>
+                                                <option>Chọn lý do</option>
+                                                <option>Thiếu giấy tờ cần thiết</option>
+                                                <option>Thông tin khai báo sai</option>
+                                                <option>Giấy tờ hết hiệu lực</option>
+                                                <option value="4">Lý do khác</option>
                                             </select>
                                         </div>
                                     </div>
@@ -154,9 +156,9 @@
     }) 
     $('#enter-manually').on('change', function(){
         if($(this).is(":checked")) {
-            $('#enter-datetime').prop('disabled', false)
+            $('#enter-datetime').show()
         } else {
-            $('#enter-datetime').prop('disabled', true)
+            $('#enter-datetime').hide()
         }
     })
 </script>
