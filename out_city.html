@@ -89,12 +89,6 @@
                     </div>
                 </div>
                 <div class="row input-content">
-                    <div class="col-12">
-                        <div class="form-group">
-                            <label>Số lượng người:</label>
-                            <input type="number" class="form-control" placeholder="Số lượng người" min="1" max="50" id="number-people">
-                        </div>
-                    </div>
                     <div class="col-6">
                         <div class="form-group">
                             <label>Họ tên lái xe:</label>
@@ -107,66 +101,60 @@
                             <input type="text" class="form-control" placeholder="Số điện thoại lái xe">
                         </div>
                     </div>
-                    <div id="other-people">
+                    <div class="col-12" id="other-people">
                     </div>
-                </div>
-                <div class="row input-header">
-                    <div class="col-12">
-                        <h5>Thông tin nơi đến:</h5>
-                    </div>
-                </div>
-                <div class="row input-content">
-                    <div class="col-12">
-                        <div class="form-group">
-                            <label>Số điểm đến:</label>
-                            <input type="number" class="form-control" placeholder="Số điểm đến" min="1" max="10" id="number-place">
-                        </div>
+                    <div class="col-12 mb-3">
+                        <button class="btn btn-outline-primary btn-sm btn-block" id="btn-add-people">Thêm người đi cùng</button>
                     </div>
                 </div>
                 <div id="other-place">
                 </div>
-                <div class="row input-header">
-                    <div class="col-12">
-                        <h5>Thông tin nơi đi:</h5>
-                    </div>
-                </div>
                 <div class="row input-content">
-                    <div class="col-12 col-md-4">
-                        <div class="form-group">
-                            <label>Tỉnh:</label>
-                            <select class="form-control select2-province">
-                                <option></option>
-                                <option value="1">Tỉnh 1</option>
-                                <option value="2">Tỉnh 2</option>
-                                <option value="3">Tỉnh 3</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <div class="form-group">
-                            <label>Quận/Huyện:</label>
-                            <select class="form-control select2-district">
-                                <option></option>
-                                <option value="1">Huyện 1</option>
-                                <option value="2">Huyện 2</option>
-                                <option value="3">Huyện 3</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <div class="form-group">
-                            <label>Phường/Xã:</label>
-                            <select class="form-control select2-ward">
-                                <option></option>
-                                <option value="1">Xã 1</option>
-                                <option value="2">Xã 2</option>
-                                <option value="3">Xã 3</option>
-                            </select>
-                        </div>
+                    <div class="col-12 mb-3">
+                        <button class="btn btn-outline-primary btn-sm btn-block" id="btn-add-place">Thêm điểm đến</button>
                     </div>
                 </div>
             </div>
-
+            <div class="row input-header">
+                <div class="col-12">
+                    <h5>Thông tin nơi đi:</h5>
+                </div>
+            </div>
+            <div class="row input-content">
+                <div class="col-12 col-md-4">
+                    <div class="form-group">
+                        <label>Tỉnh:</label>
+                        <select class="form-control select2-province">
+                            <option></option>
+                            <option value="1">Tỉnh 1</option>
+                            <option value="2">Tỉnh 2</option>
+                            <option value="3">Tỉnh 3</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="form-group">
+                        <label>Quận/Huyện:</label>
+                        <select class="form-control select2-district">
+                            <option></option>
+                            <option value="1">Huyện 1</option>
+                            <option value="2">Huyện 2</option>
+                            <option value="3">Huyện 3</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="form-group">
+                        <label>Phường/Xã:</label>
+                        <select class="form-control select2-ward">
+                            <option></option>
+                            <option value="1">Xã 1</option>
+                            <option value="2">Xã 2</option>
+                            <option value="3">Xã 3</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
             <div class="row input-header">
                 <div class="col-12">
                     <h5>Thông tin nơi đến khác:</h5>

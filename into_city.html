@@ -69,12 +69,6 @@
                 </div>
             </div>
             <div class="row input-content">
-                <div class="col-12">
-                    <div class="form-group">
-                        <label>Số lượng người:</label>
-                        <input type="number" class="form-control" placeholder="Số lượng người" min="1" max="50" id="number-people">
-                    </div>
-                </div>
                 <div class="col-6">
                     <div class="form-group">
                         <label>Họ tên lái xe:</label>
@@ -87,7 +81,10 @@
                         <input type="text" class="form-control" placeholder="Số điện thoại lái xe">
                     </div>
                 </div>
-                <div id="other-people">
+                <div class="col-12" id="other-people">
+                </div>
+                <div class="col-12 mb-3">
+                    <button class="btn btn-outline-primary btn-sm btn-block" id="btn-add-people">Thêm người đi cùng</button>
                 </div>
             </div>
             <div class="row input-header">
@@ -130,21 +127,14 @@
                     </div>
                 </div>
             </div>
-            <div class="row input-header">
-                <div class="col-12">
-                    <h5>Thông tin nơi đến:</h5>
-                </div>
-            </div>
-            <div class="row input-content">
-                <div class="col-12">
-                    <div class="form-group">
-                        <label>Số điểm đến:</label>
-                        <input type="number" class="form-control" placeholder="Số điểm đến" min="1" max="10" id="number-place">
-                    </div>
-                </div>
-            </div>
             <div id="other-place">
             </div>
+            <div class="row input-content">
+                <div class="col-12 mb-3">
+                    <button class="btn btn-outline-primary btn-sm btn-block" id="btn-add-place">Thêm điểm đến</button>
+                </div>
+            </div>
+
             <div class="row input-header">
                 <div class="col-12">
                     <h5>Thông tin nơi đến khác:</h5>
@@ -235,6 +225,8 @@
     </body>
 </html>
 <script>
+    let peopleNumber = 0;
+    let otherPlaceNumber = 0;
     $('#reason-reject').on('change', function(){
         if($(this).val() == 4) {
             $('#input-other-reason').show()
@@ -249,32 +241,27 @@
             $('#input-enter-datetime').prop('disabled', true)
         }
     })
-    $('#number-people').on('input', function(){
-        let numberOtherPeople = $(this).val() - 1;
-        if(numberOtherPeople>49) {
-            numberOtherPlace = 49;
-        }
-        let str = '';
-        for (let i = 0; i < numberOtherPeople; i++){
-            str += `<div class="col-12">
+    $('#btn-add-people').on('click', function(){
+        peopleNumber ++;
+        let str = `<div class="row" id="person-${peopleNumber}"><div class="col-12">
                         <div class="form-group">
                             <label>Họ tên người đi cùng:</label>
-                            <input type="text" class="form-control text-uppercase" placeholder="Họ tên người đi cùng">
+                            <div class="d-flex">
+                                <input type="text" class="form-control text-uppercase" placeholder="Họ tên người đi cùng">
+                                <button type="button" class="btn btn-danger btn-sm delete-person ml-2" onclick="deletePerson(${peopleNumber})">Xóa</button>
+                            </div>
                         </div>
                     </div>`
-        }
-        $('#other-people').html(str);
+        $('#other-people').append(str);
     })
-    $('#number-place').on('input', function(){
-        let numberOtherPlace = $(this).val();
-        if(numberOtherPlace > 10) {
-            numberOtherPlace = 10;
-        }
-        let str = '';
-        for (let i = 0; i < numberOtherPlace; i++){
-            str += `<div class="row input-header">
+    function deletePerson(id) {
+        $(`#person-${id}`).remove()
+    }
+    $('#btn-add-place').on('click', function(){
+        otherPlaceNumber++;
+        let str = `<div id="place-${otherPlaceNumber}"><div class="row input-header">
                         <div class="col-12">
-                            <h5>Thông tin nơi đến ${i+1}:</h5>
+                            <h5>Thông tin nơi đến ${otherPlaceNumber}:</h5>
                         </div>
                     </div>
                     <div class="row input-content">
@@ -302,7 +289,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-3">
                             <div class="form-group">
                                 <label>Địa chỉ cụ thể:</label>
                                 <input type="text" class="form-control" placeholder="Địa chỉ cụ thể">
@@ -310,14 +297,19 @@
                         </div>
                         <div class="col-12 col-md-2">
                             <div class="form-group">
-                                <label>Số điện thoại nơi đến:</label>
+                                <label>Số điện thoại:</label>
                                 <input type="text" class="form-control" placeholder="Số điện thoại nơi đến">
                             </div>
                         </div>
-                    </div>`
-        }
-        $('#other-place').html(str);
+                        <div class="col-12 col-md-1">
+                            <button type="button" class="btn btn-danger btn-sm delete-place mb-3" onclick="deletePlace(${otherPlaceNumber})">Xóa</button>
+                        </div>
+                    </div></div>`
+        $('#other-place').append(str);
     })
+    function deletePlace(id) {
+        $(`#place-${id}`).remove()
+    }
     $(document).ready(function() {
         $('.select2-province').select2({
             placeholder: 'Chọn tỉnh',

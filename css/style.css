@@ -33,3 +33,8 @@ body {
 ::placeholder { /* Recent browsers */
     text-transform: none;
 }
+@media screen and (min-width: 768px) {
+    .delete-place {
+        margin-top: 2.2rem;
+    }
+}
