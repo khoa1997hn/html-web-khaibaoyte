@@ -302,9 +302,9 @@
         $('#other-people').html(str);
     })
     $('#number-place').on('input', function(){
-        let numberOtherPlace = $(this).val() - 1;
-        if(numberOtherPlace>9) {
-            numberOtherPlace = 9;
+        let numberOtherPlace = $(this).val();
+        if(numberOtherPlace > 10) {
+            numberOtherPlace = 10;
         }
         let str = '';
         for (let i = 0; i < numberOtherPlace; i++){
