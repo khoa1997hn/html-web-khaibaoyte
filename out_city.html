@@ -260,32 +260,27 @@
             $('#input-enter-datetime').prop('disabled', true)
         }
     })
-    $('#number-people').on('input', function(){
-        let numberOtherPeople = $(this).val() - 1;
-        if(numberOtherPeople>49) {
-            numberOtherPlace = 49;
-        }
-        let str = '';
-        for (let i = 0; i < numberOtherPeople; i++){
-            str += `<div class="col-12">
+    $('#btn-add-people').on('click', function(){
+        peopleNumber ++;
+        let str = `<div class="row" id="person-${peopleNumber}"><div class="col-12">
                         <div class="form-group">
                             <label>Họ tên người đi cùng:</label>
-                            <input type="text" class="form-control text-uppercase" placeholder="Họ tên người đi cùng">
+                            <div class="d-flex">
+                                <input type="text" class="form-control text-uppercase" placeholder="Họ tên người đi cùng">
+                                <button type="button" class="btn btn-danger btn-sm delete-person ml-2" onclick="deletePerson(${peopleNumber})">Xóa</button>
+                            </div>
                         </div>
                     </div>`
-        }
-        $('#other-people').html(str);
+        $('#other-people').append(str);
     })
-    $('#number-place').on('input', function(){
-        let numberOtherPlace = $(this).val();
-        if(numberOtherPlace > 10) {
-            numberOtherPlace = 10;
-        }
-        let str = '';
-        for (let i = 0; i < numberOtherPlace; i++){
-            str += `<div class="row input-header">
+    function deletePerson(id) {
+        $(`#person-${id}`).remove()
+    }
+    $('#btn-add-place').on('click', function(){
+        otherPlaceNumber++;
+        let str = `<div id="place-${otherPlaceNumber}"><div class="row input-header">
                         <div class="col-12">
-                            <h5>Thông tin nơi đến ${i+1}:</h5>
+                            <h5>Thông tin nơi đến ${otherPlaceNumber}:</h5>
                         </div>
                     </div>
                     <div class="row input-content">
@@ -313,7 +308,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-3">
                             <div class="form-group">
                                 <label>Địa chỉ cụ thể:</label>
                                 <input type="text" class="form-control" placeholder="Địa chỉ cụ thể">
@@ -321,14 +316,19 @@
                         </div>
                         <div class="col-12 col-md-2">
                             <div class="form-group">
-                                <label>Số điện thoại nơi đến:</label>
+                                <label>Số điện thoại:</label>
                                 <input type="text" class="form-control" placeholder="Số điện thoại nơi đến">
                             </div>
                         </div>
-                    </div>`
-        }
-        $('#other-place').html(str);
+                        <div class="col-12 col-md-1">
+                            <button type="button" class="btn btn-danger btn-sm delete-place mb-3" onclick="deletePlace(${otherPlaceNumber})">Xóa</button>
+                        </div>
+                    </div></div>`
+        $('#other-place').append(str);
     })
+    function deletePlace(id) {
+        $(`#place-${id}`).remove()
+    }
     $('#edit-info-btn').on('click', function(){
         $('#edit-info').show()
     })
