@@ -59,7 +59,7 @@
                 <div class="col-6">
                     <div class="form-group">
                         <label>Biển kiểm soát:</label>
-                        <input type="text" class="form-control" placeholder="Biển kiểm soát">
+                        <input type="text" class="form-control text-uppercase" placeholder="Biển kiểm soát">
                     </div>
                 </div>
             </div>
@@ -104,7 +104,22 @@
                 </div>
                 <div id="other-people">
                 </div>
-            </div>	
+            </div>
+            <div class="row input-header">
+                <div class="col-12">
+                    <h5>Thông tin nơi đến:</h5>
+                </div>
+            </div>
+            <div class="row input-content">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label>Số điểm đến:</label>
+                        <input type="number" class="form-control" placeholder="Số điểm đến" min="1" max="10" id="number-place">
+                    </div>
+                </div>
+            </div>
+            <div id="other-place">
+            </div>
             <div class="row input-header">
                 <div class="col-12">
                     <h5>Thông tin nơi đi:</h5>
@@ -144,21 +159,6 @@
                         </select>
                     </div>
                 </div>
-            </div>
-            <div class="row input-header">
-                <div class="col-12">
-                    <h5>Thông tin nơi đến:</h5>
-                </div>
-            </div>
-            <div class="row input-content">
-                <div class="col-12">
-                    <div class="form-group">
-                        <label>Số điểm đến:</label>
-                        <input type="number" class="form-control" placeholder="Số điểm đến" min="1" max="10" id="number-place">
-                    </div>
-                </div>
-            </div>
-            <div id="other-place">
             </div>
             <div class="row input-header">
                 <div class="col-12">
@@ -320,8 +320,8 @@
                         </div>
                         <div class="col-12 col-md-4">
                             <div class="form-group">
-                                <label>Chi tiết:</label>
-                                <input type="text" class="form-control" placeholder="Địa chỉ chi tiết">
+                                <label>Địa chỉ cụ thể:</label>
+                                <input type="text" class="form-control" placeholder="Địa chỉ cụ thể">
                             </div>
                         </div>
                         <div class="col-12 col-md-2">
