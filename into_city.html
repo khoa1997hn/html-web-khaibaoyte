@@ -13,6 +13,8 @@
 		<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
 		<meta name="viewport" content="width=device-width"/>
 		<!-- CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ttskch/select2-bootstrap4-theme@x.x.x/dist/select2-bootstrap4.min.css">
 		<link rel="stylesheet" href="css/bootstrap.min.css"/>
 		<link rel="stylesheet" href="css/style.css"/>
 		<link rel="stylesheet" href="css/font-awesome.min.css"/>
@@ -26,6 +28,8 @@
 		<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+        <!-- Select2 -->
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 	</head>
     <body>
 		<div class="container">
@@ -95,13 +99,23 @@
                 <div class="col-6">
                     <div class="form-group">
                         <label>Tỉnh:</label>
-                        <select class="form-control" name="ls_province"></select>
+                        <select class="form-control select2">
+                            <option></option>
+                            <option value="1">Tỉnh 1</option>
+                            <option value="2">Tỉnh 2</option>
+                            <option value="3">Tỉnh 3</option>
+                        </select>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="form-group">
                         <label>Quận/Huyện:</label>
-                        <select class="form-control" name="ls_district"></select>
+                        <select class="form-control select2">
+                            <option></option>
+                            <option value="1">Huyện 1</option>
+                            <option value="2">Huyện 2</option>
+                            <option value="3">Huyện 3</option>
+                        </select>
                     </div>
                 </div>
                 <select class="form-control" name="ls_ward" hidden></select>
@@ -112,49 +126,12 @@
                 </div>
             </div>
             <div class="row input-content">
-                <div class="col-6 col-md-2">
-                    <div class="form-group">
-                        <label>Tỉnh:</label>
-                        <select class="form-control">
-                            <option value="">Đắk Nông</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-6 col-md-2">
-                    <div class="form-group">
-                        <label>Quận/Huyện:</label>
-                        <select class="form-control">
-                            <option value="">Thành phố Gia Nghĩa</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-6 col-md-2">
-                    <div class="form-group">
-                        <label>Phường Xã</label>
-                        <select class="form-control">
-                            <option value="">Chọn phường/xã</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-6 col-md-2">
-                    <div class="form-group">
-                        <label>SĐT nơi đến:</label>
-                        <input type="text" class="form-control" placeholder="SĐT nơi đến">
-                    </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="form-group">
-                        <label>Chi tiết:</label>
-                        <input type="text" class="form-control" placeholder="Địa chỉ chi tiết">
-                    </div>
-                </div>
-            </div>
-            <div class="row input-header">
                 <div class="col-12">
-                    <h5>Thông tin nơi đến 2:</h5>
+                    <div class="form-group">
+                        <label>Số điểm đến:</label>
+                        <input type="number" class="form-control" placeholder="Số điểm đến" min="1" max="10" id="number-place">
+                    </div>
                 </div>
-            </div>
-            <div class="row input-content">
                 <div class="col-6 col-md-2">
                     <div class="form-group">
                         <label>Tỉnh:</label>
@@ -192,48 +169,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row input-header">
-                <div class="col-12">
-                    <h5>Thông tin nơi đến 3:</h5>
-                </div>
-            </div>
-            <div class="row input-content">
-                <div class="col-6 col-md-2">
-                    <div class="form-group">
-                        <label>Tỉnh:</label>
-                        <select class="form-control">
-                            <option value="">Đắk Nông</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-6 col-md-2">
-                    <div class="form-group">
-                        <label>Quận/Huyện:</label>
-                        <select class="form-control">
-                            <option value="">Thành phố Gia Nghĩa</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-6 col-md-2">
-                    <div class="form-group">
-                        <label>Phường Xã</label>
-                        <select class="form-control">
-                            <option value="">Chọn phường/xã</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-6 col-md-2">
-                    <div class="form-group">
-                        <label>SĐT nơi đến:</label>
-                        <input type="text" class="form-control" placeholder="SĐT nơi đến">
-                    </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="form-group">
-                        <label>Chi tiết:</label>
-                        <input type="text" class="form-control" placeholder="Địa chỉ chi tiết">
-                    </div>
-                </div>
+            <div id="other-place">
             </div>
             <div class="row input-header">
                 <div class="col-12">
@@ -324,13 +260,7 @@
 		</div>
     </body>
 </html>
-<script src="js/districts.min.js"></script>
 <script>
-	var localpicker = new LocalPicker({
-		province: "ls_province",
-		district: "ls_district",
-		ward: "ls_ward"
-    });
     $('#reason-reject').on('change', function(){
         if($(this).val() == 4) {
             $('#input-other-reason').show()
@@ -347,6 +277,9 @@
     })
     $('#number-people').on('input', function(){
         let numberOtherPeople = $(this).val() - 1;
+        if(numberOtherPeople>49) {
+            numberOtherPlace = 49;
+        }
         let str = '';
         for (let i = 0; i < numberOtherPeople; i++){
             str += `<div class="col-12">
@@ -358,4 +291,64 @@
         }
         $('#other-people').html(str);
     })
+    $('#number-place').on('input', function(){
+        let numberOtherPlace = $(this).val() - 1;
+        if(numberOtherPlace>9) {
+            numberOtherPlace = 9;
+        }
+        let str = '';
+        for (let i = 0; i < numberOtherPlace; i++){
+            str += `<div class="row input-header">
+                        <div class="col-12">
+                            <h5>Thông tin nơi đến ${i+2}:</h5>
+                        </div>
+                    </div>
+                    <div class="row input-content">
+                        <div class="col-6 col-md-2">
+                            <div class="form-group">
+                                <label>Tỉnh:</label>
+                                <select class="form-control">
+                                    <option value="">Đắk Nông</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-2">
+                            <div class="form-group">
+                                <label>Quận/Huyện:</label>
+                                <select class="form-control">
+                                    <option value="">Thành phố Gia Nghĩa</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-2">
+                            <div class="form-group">
+                                <label>Phường Xã</label>
+                                <select class="form-control">
+                                    <option value="">Chọn phường/xã</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-2">
+                            <div class="form-group">
+                                <label>SĐT nơi đến:</label>
+                                <input type="text" class="form-control" placeholder="SĐT nơi đến">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="form-group">
+                                <label>Chi tiết:</label>
+                                <input type="text" class="form-control" placeholder="Địa chỉ chi tiết">
+                            </div>
+                        </div>
+                    </div>`
+        }
+        $('#other-place').html(str);
+    })
+    $(document).ready(function() {
+        $('.select2').select2({
+            placeholder: 'Chọn',
+            allowClear: true,
+            theme: 'bootstrap4',
+        });
+    });
 </script>
