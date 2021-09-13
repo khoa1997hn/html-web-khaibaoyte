@@ -78,6 +78,33 @@
                     <p>Thông tin nơi đến: Bà Rịa - Vũng Tàu - Huyện Côn Đảo</p>
                 </div>
             </div>
+	    <div class="row input-header">
+                <div class="col-12">
+                    <h5>Thông tin người trên phương tiện:</h5>
+                </div>
+            </div>
+            <div class="row input-content">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label>Số lượng người:</label>
+                        <input type="number" class="form-control" placeholder="Số lượng người" min="1" max="50" id="number-people">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label>Họ tên lái xe:</label>
+                        <input type="text" class="form-control text-uppercase" placeholder="Họ tên lái xe">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label>SĐT lái xe:</label>
+                        <input type="text" class="form-control" placeholder="SĐT lái xe">
+                    </div>
+                </div>
+                <div id="other-people">
+                </div>
+            </div>	
             <div class="row input-header">
                 <div class="col-12">
                     <h5>Thông tin nơi đi:</h5>
@@ -273,6 +300,22 @@
         } else {
             $('#input-enter-datetime').prop('disabled', true)
         }
+    })
+    $('#number-people').on('input', function(){
+        let numberOtherPeople = $(this).val() - 1;
+        if(numberOtherPeople>49) {
+            numberOtherPlace = 49;
+        }
+        let str = '';
+        for (let i = 0; i < numberOtherPeople; i++){
+            str += `<div class="col-12">
+                        <div class="form-group">
+                            <label>Họ tên người đi cùng:</label>
+                            <input type="text" class="form-control text-uppercase" placeholder="Họ tên người đi cùng">
+                        </div>
+                    </div>`
+        }
+        $('#other-people').html(str);
     })
     $('#number-place').on('input', function(){
         let numberOtherPlace = $(this).val();
