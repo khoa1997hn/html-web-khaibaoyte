@@ -124,7 +124,7 @@
                     <div class="form-group">
                         <label>Phường/Xã:</label>
                         <select class="form-control">
-                            <option value="">Chọn phường xã</option>
+                            <option value="">Thành phố Gia Nghĩa</option>
                         </select>
                     </div>
                 </div>
@@ -159,7 +159,7 @@
                     <div class="form-group">
                         <label>Phường/Xã:</label>
                         <select class="form-control">
-                            <option value="">Chọn phường xã</option>
+                            <option value="">Thành phố Gia Nghĩa</option>
                         </select>
                     </div>
                 </div>
@@ -194,7 +194,7 @@
                     <div class="form-group">
                         <label>Phường/Xã:</label>
                         <select class="form-control">
-                            <option value="">Chọn phường xã</option>
+                            <option value="">Thành phố Gia Nghĩa</option>
                         </select>
                     </div>
                 </div>
@@ -221,7 +221,7 @@
                     <div class="form-group">
                         <label>Chọn nơi đến:</label>
                         <select class="form-control">
-                            <option value="">Lý do khác</option>
+                            <option value="">Khác</option>
                             <option value="">Huyện Đắk Song, tỉnh Đắk Nông</option>
                             <option value="">Huyện Đắk Glong, tỉnh Đắk Nông</option>
                             <option value="">Huyện Đắk R’Lấp, tỉnh Đắk Nông</option>
@@ -243,9 +243,9 @@
                         </label>
                     </div>
                 </div>
-                <div class="col-12" id="enter-datetime" style="display: none;">
+                <div class="col-12" id="enter-datetime">
                     <div class="form-group">
-                        <input id="input-enter-datetime" type="datetime-local" class="form-control" placeholder="dd/mm/yyy --:-- --">
+                        <input id="input-enter-datetime" type="datetime-local" class="form-control" value="2021-10-24T20:36:00" step="1" disabled>
                     </div>
                 </div>
             </div>
@@ -316,10 +316,8 @@
     }) 
     $('#enter-manually').on('change', function(){
         if($(this).is(":checked")) {
-            $('#enter-datetime').show()
             $('#input-enter-datetime').prop('disabled', false)
         } else {
-            $('#enter-datetime').hide()
             $('#input-enter-datetime').prop('disabled', true)
         }
     })
