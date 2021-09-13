@@ -96,10 +96,10 @@
                 </div>
             </div>
             <div class="row input-content">
-                <div class="col-6 col-md-4">
+                <div class="col-12 col-md-4">
                     <div class="form-group">
                         <label>Tỉnh:</label>
-                        <select class="form-control select2">
+                        <select class="form-control select2-province">
                             <option></option>
                             <option value="1">Tỉnh 1</option>
                             <option value="2">Tỉnh 2</option>
@@ -107,10 +107,10 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-6 col-md-4">
+                <div class="col-12 col-md-4">
                     <div class="form-group">
                         <label>Quận/Huyện:</label>
-                        <select class="form-control select2">
+                        <select class="form-control select2-district">
                             <option></option>
                             <option value="1">Huyện 1</option>
                             <option value="2">Huyện 2</option>
@@ -118,10 +118,10 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-6 col-md-4">
+                <div class="col-12 col-md-4">
                     <div class="form-group">
                         <label>Phường/Xã:</label>
-                        <select class="form-control select2">
+                        <select class="form-control select2-ward">
                             <option></option>
                             <option value="1">Xã 1</option>
                             <option value="2">Xã 2</option>
@@ -142,7 +142,7 @@
                         <input type="number" class="form-control" placeholder="Số điểm đến" min="1" max="10" id="number-place">
                     </div>
                 </div>
-                <div class="col-6 col-md-2">
+                <div class="col-12 col-md-2">
                     <div class="form-group">
                         <label>Tỉnh:</label>
                         <select class="form-control">
@@ -150,7 +150,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-6 col-md-2">
+                <div class="col-12 col-md-2">
                     <div class="form-group">
                         <label>Quận/Huyện:</label>
                         <select class="form-control">
@@ -158,7 +158,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-6 col-md-2">
+                <div class="col-12 col-md-2">
                     <div class="form-group">
                         <label>Phường/Xã</label>
                         <select class="form-control">
@@ -314,7 +314,7 @@
                         </div>
                     </div>
                     <div class="row input-content">
-                        <div class="col-6 col-md-2">
+                        <div class="col-12 col-md-2">
                             <div class="form-group">
                                 <label>Tỉnh:</label>
                                 <select class="form-control">
@@ -322,7 +322,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-6 col-md-2">
+                        <div class="col-12 col-md-2">
                             <div class="form-group">
                                 <label>Quận/Huyện:</label>
                                 <select class="form-control">
@@ -330,7 +330,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-6 col-md-2">
+                        <div class="col-12 col-md-2">
                             <div class="form-group">
                                 <label>Phường/Xã</label>
                                 <select class="form-control">
@@ -355,8 +355,18 @@
         $('#other-place').html(str);
     })
     $(document).ready(function() {
-        $('.select2').select2({
-            placeholder: 'Chọn',
+        $('.select2-province').select2({
+            placeholder: 'Chọn tỉnh',
+            allowClear: true,
+            theme: 'bootstrap4',
+        });
+        $('.select2-district').select2({
+            placeholder: 'Chọn quận/huyện',
+            allowClear: true,
+            theme: 'bootstrap4',
+        });
+        $('.select2-ward').select2({
+            placeholder: 'Chọn xã/phường',
             allowClear: true,
             theme: 'bootstrap4',
         });
