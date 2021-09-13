@@ -245,7 +245,7 @@
                 </div>
                 <div class="col-12" id="enter-datetime" style="display: none;">
                     <div class="form-group">
-                        <input type="datetime-local" class="form-control" placeholder="dd/mm/yyy --:-- --">
+                        <input id="input-enter-datetime" type="datetime-local" class="form-control" placeholder="dd/mm/yyy --:-- --">
                     </div>
                 </div>
             </div>
@@ -317,8 +317,10 @@
     $('#enter-manually').on('change', function(){
         if($(this).is(":checked")) {
             $('#enter-datetime').show()
+            $('#input-enter-datetime').prop('disabled', false)
         } else {
             $('#enter-datetime').hide()
+            $('#input-enter-datetime').prop('disabled', true)
         }
     })
     $('#number-people').on('input', function(){
