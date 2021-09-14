@@ -131,10 +131,13 @@
                 <div id="place-1">
                     <div class="row input-header">
                         <div class="col-12">
-                            <h5>Thông tin nơi đến 1:</h5>
+                            <h5>Thông tin nơi đến:</h5>
                         </div>
                     </div>
                     <div class="row input-content">
+                        <div class="col-12">
+                            <h5>Thông tin nơi đến 1:</h5>
+                        </div>
                         <div class="col-12 col-md-2">
                             <div class="form-group">
                                 <label>Tỉnh:</label>
@@ -185,7 +188,7 @@
 
             <div class="row input-header">
                 <div class="col-12">
-                    <h5>Thông tin nơi đến:</h5>
+                    <h5>Thông tin nơi đến khác:</h5>
                 </div>
             </div>
             <div class="row input-content">
@@ -307,12 +310,11 @@
     }
     $('#btn-add-place').on('click', function(){
         otherPlaceNumber++;
-        let str = `<div id="place-${otherPlaceNumber}"><div class="row input-header">
+        let str = `<div id="place-${otherPlaceNumber}">
+                    <div class="row input-content">
                         <div class="col-12">
                             <h5>Thông tin nơi đến ${otherPlaceNumber}:</h5>
                         </div>
-                    </div>
-                    <div class="row input-content">
                         <div class="col-12 col-md-2">
                             <div class="form-group">
                                 <label>Tỉnh:</label>
