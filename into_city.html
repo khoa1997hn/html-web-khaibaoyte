@@ -361,6 +361,9 @@
         $(`#place-${id}`).remove()
     }
     $(document).ready(function() {
+        setSelect2()
+    });
+    function setSelect2() {
         $('.select2-province').select2({
             placeholder: 'Chọn tỉnh',
             allowClear: true,
@@ -376,5 +379,5 @@
             allowClear: true,
             theme: 'bootstrap4',
         });
-    });
+    }
 </script>
