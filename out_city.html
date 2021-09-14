@@ -64,11 +64,8 @@
                 </div>
             </div>
             <div class="row input-header">
-                <div class="col-9">
+                <div class="col-12">
                     <h5>Thông tin vào thành phố:</h5>
-                </div>
-                <div class="col-3">
-                    <button class="btn btn-success btn-sm float-right" id="edit-info-btn">Sửa</button>
                 </div>
             </div>
             <div class="row input-content">
@@ -108,6 +105,54 @@
                     </div>
                 </div>
                 <div id="other-place">
+                    <div id="place-1">
+                        <div class="row input-header">
+                            <div class="col-12">
+                                <h5>Thông tin nơi đến 1:</h5>
+                            </div>
+                        </div>
+                        <div class="row input-content">
+                            <div class="col-12 col-md-2">
+                                <div class="form-group">
+                                    <label>Tỉnh:</label>
+                                    <select class="form-control">
+                                        <option value="">Đắk Nông</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <div class="form-group">
+                                    <label>Quận/Huyện:</label>
+                                    <select class="form-control">
+                                        <option value="">Thành phố Gia Nghĩa</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <div class="form-group">
+                                    <label>Phường/Xã</label>
+                                    <select class="form-control">
+                                        <option value="">Chọn phường/xã</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <div class="form-group">
+                                    <label>Địa chỉ cụ thể:</label>
+                                    <input type="text" class="form-control" placeholder="Địa chỉ cụ thể">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <div class="form-group">
+                                    <label>Số điện thoại:</label>
+                                    <input type="text" class="form-control" placeholder="Số điện thoại nơi đến">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-1">
+                                
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="row input-content">
                     <div class="col-12 mb-3">
@@ -329,9 +374,6 @@
     function deletePlace(id) {
         $(`#place-${id}`).remove()
     }
-    $('#edit-info-btn').on('click', function(){
-        $('#edit-info').show()
-    })
     $(document).ready(function() {
         $('.select2-province').select2({
             placeholder: 'Chọn tỉnh',
