@@ -109,12 +109,12 @@
                     <div id="place-1">
                         <div class="row input-header">
                             <div class="col-12">
-                                <h5>Thông tin nơi đến:</h5>
+                                <h5>Thông tin nơi đi:</h5>
                             </div>
                         </div>
                         <div class="row input-content">
                             <div class="col-12">
-                                <h5>Thông tin nơi đến 1:</h5>
+                                <h5>Thông tin nơi đi 1:</h5>
                             </div>
                             <div class="col-12 col-md-2">
                                 <div class="form-group">
@@ -149,7 +149,7 @@
                             <div class="col-12 col-md-2">
                                 <div class="form-group">
                                     <label>Số điện thoại:</label>
-                                    <input type="text" class="form-control" placeholder="Số điện thoại nơi đến">
+                                    <input type="text" class="form-control" placeholder="Số điện thoại nơi đi">
                                 </div>
                             </div>
                             <div class="col-12 col-md-1">
@@ -160,57 +160,8 @@
                 </div>
                 <div class="row input-content">
                     <div class="col-12 mb-3">
-                        <button class="btn btn-outline-primary btn-sm btn-block" id="btn-add-place">Thêm điểm đến</button>
+                        <button class="btn btn-outline-primary btn-sm btn-block" id="btn-add-place">Thêm nơi đi</button>
                     </div>
-                </div>
-            </div>
-            <div class="row input-header">
-                <div class="col-12">
-                    <h5>Thông tin nơi đi:</h5>
-                </div>
-            </div>
-            <div id="other-place-to-go">
-                <div class="row input-content">
-                    <div class="col-12">
-                        <h5>Thông tin nơi đi 1:</h5>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <div class="form-group">
-                            <label>Tỉnh:</label>
-                            <select class="form-control">
-                                <option value="1" selected>Đăk Nông</option>
-                                <option value="2">Tỉnh 2</option>
-                                <option value="3">Tỉnh 3</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <div class="form-group">
-                            <label>Quận/Huyện:</label>
-                            <select class="form-control select2-district">
-                                <option></option>
-                                <option value="1">Huyện 1</option>
-                                <option value="2">Huyện 2</option>
-                                <option value="3">Huyện 3</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-3">
-                        <div class="form-group">
-                            <label>Phường/Xã:</label>
-                            <select class="form-control select2-ward">
-                                <option></option>
-                                <option value="1">Xã 1</option>
-                                <option value="2">Xã 2</option>
-                                <option value="3">Xã 3</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row input-content">
-                <div class="col-12 mb-3">
-                    <button class="btn btn-outline-primary btn-sm btn-block" id="btn-add-place-to-go">Thêm nơi đi</button>
                 </div>
             </div>
             <div class="row input-header">
@@ -306,7 +257,6 @@
 <script>
     let peopleNumber = 0;
     let otherPlaceNumber = 1;
-    let otherPlaceToGoNumber = 1;
 
     $('#reason-reject').on('change', function(){
         if($(this).val() == 4) {
@@ -343,7 +293,7 @@
         let str = `<div id="place-${otherPlaceNumber}">
                     <div class="row input-content">
                         <div class="col-12">
-                            <h5>Thông tin nơi đến ${otherPlaceNumber}:</h5>
+                            <h5>Thông tin nơi đi ${otherPlaceNumber}:</h5>
                         </div>
                         <div class="col-12 col-md-2">
                             <div class="form-group">
@@ -389,57 +339,6 @@
     })
     function deletePlace(id) {
         $(`#place-${id}`).remove()
-    }
-
-    $('#btn-add-place-to-go').on('click', function(){
-        otherPlaceToGoNumber++;
-        let str = `<div id="place-to-go-${otherPlaceToGoNumber}">
-                    <div class="row input-content">
-                            <div class="col-12">
-                                <h5>Thông tin nơi đi ${otherPlaceToGoNumber}:</h5>
-                            </div>
-                            <div class="col-12 col-md-4">
-                                <div class="form-group">
-                                    <label>Tỉnh:</label>
-                                    <select class="form-control">
-                                        <option value="1" selected>Đăk Nông</option>
-                                        <option value="2">Tỉnh 2</option>
-                                        <option value="3">Tỉnh 3</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-4">
-                                <div class="form-group">
-                                    <label>Quận/Huyện:</label>
-                                    <select class="form-control select2-district">
-                                        <option></option>
-                                        <option value="1">Huyện 1</option>
-                                        <option value="2">Huyện 2</option>
-                                        <option value="3">Huyện 3</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-3">
-                                <div class="form-group">
-                                    <label>Phường/Xã:</label>
-                                    <select class="form-control select2-ward">
-                                        <option></option>
-                                        <option value="1">Xã 1</option>
-                                        <option value="2">Xã 2</option>
-                                        <option value="3">Xã 3</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-1">
-                                <button type="button" class="btn btn-danger btn-sm delete-place mb-3" onclick="deletePlaceToGo(${otherPlaceToGoNumber})">Xóa</button>
-                            </div>
-                        </div></div>`
-        $('#other-place-to-go').append(str);
-        setSelect2()
-
-    })
-    function deletePlaceToGo(id) {
-        $(`#place-to-go-${id}`).remove()
     }
     $(document).ready(function() {
         setSelect2()
